@@ -1,15 +1,13 @@
 package com.shipping.demo;
 
-import jakarta.persistance.Entity;
-import jakarta.persistance.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 @Entity
 @Data
-public class ShipmentLog{
+public class ShipmentLog {
     @Id
     private String order_id;
     private String status;
-
-
 }

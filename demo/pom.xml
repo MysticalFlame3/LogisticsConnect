@@ -63,11 +63,7 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependecy>
-			<groupId>org.jobrunr</groupId>
-    		<artifactId>jobrunr-spring-boot-3-starter</artifactId>
-    		<version>6.3.3</version>
-		</dependecy>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>

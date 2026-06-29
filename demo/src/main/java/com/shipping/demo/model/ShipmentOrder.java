@@ -1,27 +1,26 @@
-package com.shipping.demo.shipmentorder;
-import com.shipping.demo.model.bulk_shipment_request;
+package com.shipping.demo.model;
 
 import jakarta.persistence.*;
-
-public enum ShipmentStatus{
-    PENDING,
-    SHIPPED,
-    DELIVERED,
-    CANCELLED;
-}
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name="shipmentorder")
 public class ShipmentOrder {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
-
-    @ManyToOne
-    @JoinColumn(name = "request_id")
-    public bulk_shipment_request request;
+    public long request_id;
+    
     public String tracking_id;
     public String courier;
     public ShipmentStatus status;
+
+    public enum ShipmentStatus {
+        PENDING,
+        SHIPPED,
+        DELIVERED,
+        CANCELLED;
+    }
 }

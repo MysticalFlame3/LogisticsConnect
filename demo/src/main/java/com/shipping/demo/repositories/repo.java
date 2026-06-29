@@ -1,12 +1,9 @@
-import com.shipping.demo.reposutories;
+package com.shipping.demo.repositories;
 
-import com.shipping.demo.entities.ShipmentLog;
-
+import com.shipping.demo.ShipmentLog;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ShipmentLogRepository extends JpaRepository<ShipmentLog, String> {
-    
-    
+public interface repo extends JpaRepository<ShipmentLog, String> {
 }

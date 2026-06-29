@@ -7,23 +7,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 
-import com.shipping.demo.dtos.CreateBulkShipmentDto;
-import com.shipping.demo.dtos.ResponseShipment;
-import com.shipping.demo.service.ShipmentService;
+import com.shipping.demo.dto.dto.CreateBulkShipmentDto;
+import com.shipping.demo.dto.dto.ResponseShipment;
+import com.shipping.demo.service.shipmentService;
 
 @RestController
 @RequestMapping("/api/v1/shipment")
-public class ShipmentController {
+public class shipment {
 
-    private final ShipmentService shipmentService;
+    private final shipmentService service;
 
-    public ShipmentController(ShipmentService shipmentService){
-        this.shipmentService = shipmentService;
+    public shipment(shipmentService service){
+        this.service = service;
     }
 
     @PostMapping
     public ResponseEntity<ResponseShipment> createShipment(@RequestBody CreateBulkShipmentDto requestData){
-        ResponseShipment shipment = shipmentService.processShipment(requestData);
-        return ResponseEntity.status(HttpStatus.CREATED).body(shipment);
+        ResponseShipment res = service.processShipment(requestData);
+        return ResponseEntity.status(HttpStatus.CREATED).body(res);
     }
 }
